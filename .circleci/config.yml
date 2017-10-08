@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/mock-oauth2
+    docker:
+      - image: ags799/boot-docker:aae0246
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 17.06.1-ce  # should match Docker version from image
+      - restore_cache:
+          key: mock-oauth2-{{checksum "boot.properties" }}-{{ checksum "build.boot" }}
+      - run: boot verify
+      - deploy:
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              boot docker docker-publish
+            fi
+      - save_cache:
+          paths:
+            - ~/.m2
+            - ~/.boot/cache/lib
+            - ~/.boot/cache/bin
+          key: mock-oauth2-{{checksum "boot.properties" }}-{{ checksum "build.boot" }}
+    environment:
+      BOOT_JVM_OPTIONS: "-Xms512m -Xmx1024m"
+      BOOT_WATCHERS_DISABLE: "yes"
