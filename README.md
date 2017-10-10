@@ -7,6 +7,8 @@ A mock OAuth 2 server.
 View usage instructions on our [Docker Hub page](https://hub.docker.com/r/ags799/mock-oauth2).
 
 ## Development
+Prepare your environment by installing [boot](boot-clj.com) and [Docker](docker.com).
+
 Verify your code's quality and correctness with
 
     boot verify
