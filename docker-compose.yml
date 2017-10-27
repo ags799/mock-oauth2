@@ -1,0 +1,6 @@
+version: "3"
+services:
+  mock-oauth2:
+    image: mock-oauth2
+    ports:
+      - "8080:8080"
