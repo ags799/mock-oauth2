@@ -1,6 +1,6 @@
 (set-env! :resource-paths #{"src", "test"}
           :dependencies `[[org.clojure/clojure ~(clojure-version)]
-                          [ags799/bootlaces "960df04"]
+                          [ags799/bootlaces "33fd8b8"]
                           [clj-http/clj-http "3.7.0"]
                           [metosin/compojure-api "2.0.0-alpha7"]
                           [ring/ring-jetty-adapter "1.6.2"]])
