@@ -3,6 +3,7 @@
                           [ags799/bootlaces "7e1a42c"]
                           [clj-http/clj-http "3.7.0"]
                           [metosin/compojure-api "2.0.0-alpha7"]
+                          [org.clojure/java.jdbc "0.7.3"]
                           [ring/ring-jetty-adapter "1.6.2"]])
 
 (task-options! jar {:main 'ags799.mock-oauth2.main})
